@@ -13,6 +13,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { httpInterceptorProviders } from '../helpers/auth.interceptor';
 import { ProfileComponent } from './components/profile/profile.component';
 import { BoardComponent } from './components/board/board.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +25,9 @@ import { BoardComponent } from './components/board/board.component';
     HomeComponent,
     ProfileComponent,
     BoardComponent,
+    SidebarComponent,
+    NavbarComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
