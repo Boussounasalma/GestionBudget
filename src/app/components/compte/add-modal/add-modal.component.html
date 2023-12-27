@@ -1,0 +1,38 @@
+<div class="wrapper">
+  <div class="sidebar" data-color="white" data-active-color="danger">
+    <app-sidebar></app-sidebar>
+  </div>
+  <div class="main-panel">
+    <app-navbar></app-navbar>
+    <div class="content">
+      <div class="container mt-4">
+        <form (ngSubmit)="addCompte()">
+          <div class="form-group">
+            <label for="nom">Compte:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="nom"
+              [(ngModel)]="newCompte.nom"
+              name="nom"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="solde">Solde:</label>
+            <input
+              type="number"
+              class="form-control"
+              id="solde"
+              [(ngModel)]="newCompte.solde"
+              name="solde"
+              required
+            />
+          </div>
+          <button type="submit" class="btn btn-success">Add Compte</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>

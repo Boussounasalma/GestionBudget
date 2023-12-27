@@ -2,3 +2,25 @@
 @import "bootstrap/scss/bootstrap";
 @import "assets/scss/paper-dashboard.scss";
 @import "@fortawesome/fontawesome-free/css/all.css";
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+/* Importing Bootstrap SCSS file. */
+@import "bootstrap/scss/bootstrap";
+
+.full-page-modal {
+  max-width: 100%;
+  margin: 0;
+}
+
+.full-page-modal .modal-content {
+  height: 100vh; // 100% of the viewport height
+  border-radius: 0; // Optional: Remove border-radius for a cleaner look
+}

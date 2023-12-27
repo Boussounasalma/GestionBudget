@@ -1,6 +1,7 @@
 // registration.component.ts
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
@@ -15,10 +16,13 @@ export class RegistrationComponent {
   isSignUpFailed = false;
   errorMessage = '';
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {}
 
+  navigateToSignIn() {
+    this.router.navigate(['/sign-in']);
+  }
   onSubmit(): void {
     const { username, email, password } = this.form;
 

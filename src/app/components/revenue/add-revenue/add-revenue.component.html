@@ -1,0 +1,88 @@
+<div class="wrapper">
+  <div class="sidebar" data-color="white" data-active-color="danger">
+    <app-sidebar></app-sidebar>
+  </div>
+  <div class="main-panel">
+    <app-navbar></app-navbar>
+    <div class="content">
+      <div class="container mt-4">
+        <div class="col-md-12">
+          <div class="card card-plain">
+            <div class="card-header">
+              <h4 class="card-title">Add Revenue</h4>
+            </div>
+            <div class="card-body">
+              <form (submit)="submitForm()">
+                <div class="form-group">
+                  <label for="selectCompte">Select Compte:</label>
+                  <select
+                    class="form-control"
+                    id="selectCompte"
+                    [(ngModel)]="selectedCompte"
+                    name="selectedCompte"
+                    required
+                  >
+                    <option *ngFor="let compte of comptes" [value]="compte.id">
+                      {{ compte.nom }}
+                    </option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="inputSourceRevenu">Source of Revenue:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="inputSourceRevenu"
+                    [(ngModel)]="selectedSourceRevenu"
+                    name="selectedSourceRevenu"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="selectCategory">Select Category:</label>
+                  <select
+                    class="form-control"
+                    id="selectCategory"
+                    [(ngModel)]="selectedCategory"
+                    name="selectedCategory"
+                    required
+                  >
+                    <option value="Salaire">Salaire</option>
+                    <option value="Autre">Autre</option>
+                    <!-- Add more options as needed -->
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="inputDate">Date:</label>
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="inputDate"
+                    [(ngModel)]="selectedDate"
+                    name="selectedDate"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="inputMontant">Montant:</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="inputMontant"
+                    [(ngModel)]="selectedMontant"
+                    name="selectedMontant"
+                    required
+                  />
+                </div>
+                <button type="submit" class="btn btn-primary">
+                  Add Revenue
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>

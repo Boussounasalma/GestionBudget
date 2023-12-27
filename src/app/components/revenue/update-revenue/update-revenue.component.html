@@ -1,0 +1,75 @@
+<div class="container mt-4">
+  <div class="col-md-12">
+    <div class="card card-plain">
+      <div class="card-header">
+        <h4 class="card-title">Update Revenue</h4>
+      </div>
+      <div class="card-body">
+        <form (submit)="updateRevenue()">
+          <div class="form-group">
+            <label for="inputDate">Date:</label>
+            <input
+              type="date"
+              class="form-control"
+              id="inputDate"
+              [(ngModel)]="selectedRevenue.date"
+              name="selectedDate"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="inputMontant">Montant:</label>
+            <input
+              type="number"
+              class="form-control"
+              id="inputMontant"
+              [(ngModel)]="selectedRevenue.montant"
+              name="selectedMontant"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="selectCompte">Select Compte:</label>
+            <select
+              class="form-control"
+              id="selectCompte"
+              [(ngModel)]="selectedRevenue.compte.id"
+              name="selectedCompte"
+              required
+            >
+              <option *ngFor="let compte of comptes" [value]="compte.id">
+                {{ compte.nom }}
+              </option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="selectSourceRevenu">Select Source of Revenue:</label>
+            <select
+              class="form-control"
+              id="selectSourceRevenu"
+              [(ngModel)]="selectedRevenue.sourceRevenu"
+              name="selectedSourceRevenu"
+              required
+            >
+              <option value="Salaire">Salaire</option>
+              <option value="Autre">Autre</option>
+              <!-- Add more options as needed -->
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="inputCategory">Category:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputCategory"
+              [(ngModel)]="selectedRevenue.categorie"
+              name="selectedCategory"
+              required
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">Update Revenue</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

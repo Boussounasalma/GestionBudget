@@ -15,7 +15,7 @@ export const ROUTES: RouteInfo[] = [
     icon: 'nc-vector',
     class: '',
   },
-  { path: '/revenu', title: 'Revenu', icon: 'nc-money-coins', class: '' },
+  { path: '/revenue', title: 'Revenu', icon: 'nc-money-coins', class: '' },
   { path: '/depense', title: 'Depense', icon: 'nc-credit-card', class: '' },
   { path: '/epargne', title: 'Epargne', icon: 'nc-tile-56', class: '' },
   {

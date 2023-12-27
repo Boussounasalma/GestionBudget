@@ -1,5 +1,4 @@
-// login.component.ts
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { TokenStorageService } from '../../services/token-storage.service';
 import { Router } from '@angular/router';
@@ -24,10 +23,8 @@ export class LoginComponent {
     private router: Router
   ) {}
 
-  ngOnInit(): void {
-    if (this.storageService.isLoggedIn()) {
-      this.isLoggedIn = true;
-    }
+  navigateToRegister() {
+    this.router.navigate(['/registration']);
   }
 
   onSubmit(): void {

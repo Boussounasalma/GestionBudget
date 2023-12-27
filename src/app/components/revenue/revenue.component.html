@@ -1,0 +1,57 @@
+<div class="wrapper">
+  <div class="sidebar" data-color="white" data-active-color="danger">
+    <app-sidebar></app-sidebar>
+  </div>
+  <div class="main-panel">
+    <app-navbar></app-navbar>
+    <div class="content">
+      <div class="container mt-4">
+        <div class="col-md-12">
+          <div class="card card-plain">
+            <div class="card-header">
+              <h4 class="card-title">Historique de revenues</h4>
+              <button class="btn btn-success btn-sm" (click)="addRevenue()">
+                Add Revenue
+              </button>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead class="text-primary">
+                    <th>ID</th>
+                    <th>Date</th>
+                    <th>Amount</th>
+                    <th>Source</th>
+                    <th>Category</th>
+                    <th>Account</th>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let revenu of revenus">
+                      <td>{{ revenu.id }}</td>
+                      <td>{{ revenu.date }}</td>
+                      <td>{{ revenu.montant }}</td>
+                      <td>{{ revenu.sourceRevenu }}</td>
+                      <td>{{ revenu.categorie }}</td>
+                      <td>{{ revenu.compte.nom }}</td>
+                      <td>
+                        <i
+                          class="fas fa-edit text-primary mr-2 fa-lg"
+                          (click)="updateRevenu(revenu.id)"
+                        ></i>
+                        <i
+                          class="fas fa-trash-alt text-danger fa-lg"
+                          (click)="deleteRevenu(revenu.id)"
+                        ></i>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <app-footer></app-footer>
+    </div>
+  </div>
+</div>
