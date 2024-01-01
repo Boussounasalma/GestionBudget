@@ -33,6 +33,7 @@ export class DepenseComponent {
   goToAddDepense() {
     this.router.navigate(['/add-depense']);
   }
+
   editDepense(depense: Depense) {
     this.isAddingOrEditing = true;
     this.selectedDepenseId = depense.id;

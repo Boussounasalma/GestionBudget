@@ -18,6 +18,8 @@ import { AddDepenseComponent } from './components/depense/add-depense/add-depens
 import { UpdateDepenseComponent } from './components/depense/update-depense/update-depense.component';
 import { ObjectifComponent } from './components/objectif/objectif.component';
 import { EpargneComponent } from './components/epargne/epargne.component';
+import { AddObjectifComponent } from './components/objectif/add-objectif/add-objectif.component';
+import { UpdateObjectifComponent } from './components/objectif/update-objectif/update-objectif.component';
 
 // app-routing.module.ts
 const routes: Routes = [
@@ -35,7 +37,10 @@ const routes: Routes = [
   { path: 'add-depense', component: AddDepenseComponent },
   { path: 'update-depense/:id', component: UpdateDepenseComponent },
   { path: 'objectif', component: ObjectifComponent },
+  { path: 'add-objectif', component: AddObjectifComponent },
+  { path: 'add-objectif', component: UpdateObjectifComponent },
   { path: 'epargne', component: EpargneComponent },
+
   {
     path: 'profile',
     component: ProfileComponent,

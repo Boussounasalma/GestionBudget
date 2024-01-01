@@ -29,6 +29,8 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { UpdateDepenseComponent } from './components/depense/update-depense/update-depense.component';
 import { ObjectifComponent } from './components/objectif/objectif.component';
 import { EpargneComponent } from './components/epargne/epargne.component';
+import { AddObjectifComponent } from './components/objectif/add-objectif/add-objectif.component';
+import { UpdateObjectifComponent } from './components/objectif/update-objectif/update-objectif.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +55,8 @@ import { EpargneComponent } from './components/epargne/epargne.component';
     UpdateDepenseComponent,
     ObjectifComponent,
     EpargneComponent,
+    AddObjectifComponent,
+    UpdateObjectifComponent,
   ],
   imports: [
     BrowserModule,

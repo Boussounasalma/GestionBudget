@@ -1,1 +1,59 @@
-<p>objectif works!</p>
+<div class="wrapper">
+  <div class="sidebar" data-color="white" data-active-color="danger">
+    <app-sidebar></app-sidebar>
+  </div>
+  <div class="main-panel">
+    <app-navbar></app-navbar>
+    <div class="content">
+      <div class="container mt-4">
+        <div class="row">
+          <div class="col-md-12">
+            <h2>User Objectifs</h2>
+
+            <!-- Button to add a new objective -->
+            <button class="btn btn-primary mb-3" (click)="addNewObjectif()">
+              Add Objective
+            </button>
+
+            <div class="row">
+              <!-- Display each objective using Bootstrap cards -->
+              <div class="col-md-4 mb-4" *ngFor="let objectif of objectifs">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">{{ objectif.titre }}</h5>
+                    <p class="card-text">
+                      Description: {{ objectif.description }}
+                    </p>
+                    <p class="card-text">
+                      Montant Actuel: {{ objectif.montantActuel }}
+                    </p>
+                    <p class="card-text">
+                      Montant Cible: {{ objectif.montantCible }}
+                    </p>
+                    <p class="card-text">
+                      Date Limite: {{ objectif.dateLimite | date : "short" }}
+                    </p>
+
+                    <!-- Buttons for modification and deletion -->
+                    <button
+                      class="btn btn-warning mr-2"
+                      (click)="editObjectif(objectif.id)"
+                    >
+                      Edit
+                    </button>
+                    <button
+                      class="btn btn-danger"
+                      (click)="deleteObjectif(objectif.id)"
+                    >
+                      Delete
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
