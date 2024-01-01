@@ -38,7 +38,7 @@ const routes: Routes = [
   { path: 'update-depense/:id', component: UpdateDepenseComponent },
   { path: 'objectif', component: ObjectifComponent },
   { path: 'add-objectif', component: AddObjectifComponent },
-  { path: 'add-objectif', component: UpdateObjectifComponent },
+  { path: 'update-objectif/:id', component: UpdateObjectifComponent },
   { path: 'epargne', component: EpargneComponent },
 
   {

@@ -57,5 +57,7 @@ export class ObjectifComponent {
     this.router.navigate(['/add-objectif']);
   }
 
-  editObjectif(objectif: number) {}
+  editObjectif(objectif: number) {
+    this.router.navigate(['/update-objectif', objectif]);
+  }
 }

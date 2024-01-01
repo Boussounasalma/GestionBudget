@@ -1,0 +1,95 @@
+<div class="wrapper">
+  <div class="sidebar" data-color="white" data-active-color="danger">
+    <app-sidebar></app-sidebar>
+  </div>
+  <div class="main-panel">
+    <app-navbar></app-navbar>
+    <div class="content">
+      <div class="container mt-4">
+        <div class="col-md-8 offset-md-2">
+          <!-- Use offset to center the form -->
+
+          <div class="card">
+            <div class="card-header">
+              <h2 class="text-center">Update Your Objective</h2>
+            </div>
+            <div class="card-body">
+              <form (ngSubmit)="onSubmit()" #objectiveForm="ngForm">
+                <div class="form-group">
+                  <label for="titre">Title:</label>
+                  <input
+                    type="text"
+                    id="titre"
+                    name="titre"
+                    [(ngModel)]="newObjective.titre"
+                    class="form-control"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="description">Description:</label>
+                  <textarea
+                    id="description"
+                    name="description"
+                    [(ngModel)]="newObjective.description"
+                    class="form-control"
+                    required
+                  ></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="montantActuel">Current Amount:</label>
+                  <input
+                    type="number"
+                    id="montantActuel"
+                    name="montantActuel"
+                    [(ngModel)]="newObjective.montantActuel"
+                    class="form-control"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="montantCible">Target Amount:</label>
+                  <input
+                    type="number"
+                    id="montantCible"
+                    name="montantCible"
+                    [(ngModel)]="newObjective.montantCible"
+                    class="form-control"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="dateLimite">Due Date:</label>
+                  <input
+                    type="date"
+                    id="dateLimite"
+                    name="dateLimite"
+                    [(ngModel)]="newObjective.dateLimite"
+                    class="form-control"
+                    required
+                  />
+                </div>
+
+                <!-- Add any other form fields as needed -->
+
+                <div class="text-center">
+                  <button
+                    type="submit"
+                    class="btn btn-primary"
+                    [disabled]="!objectiveForm.valid"
+                  >
+                    Update Objective
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
