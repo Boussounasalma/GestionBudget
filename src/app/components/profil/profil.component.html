@@ -1,0 +1,36 @@
+<div class="wrapper">
+  <div class="sidebar" data-color="white" data-active-color="danger">
+    <app-sidebar></app-sidebar>
+  </div>
+  <div class="main-panel">
+    <app-navbar></app-navbar>
+    <div class="content">
+      <div class="container mt-4">
+        <div class="col-md-12">
+          <!-- Show normal display if not in edit mode -->
+          <div *ngIf="!isEditMode" class="user-info">
+            <h2>{{ user.username }}</h2>
+            <p>Email: {{ user.email }}</p>
+            <button class="btn btn-primary" (click)="enterEditMode()">
+              Edit
+            </button>
+          </div>
+
+          <!-- Show edit mode if in edit mode -->
+          <div *ngIf="isEditMode" class="edit-mode">
+            <label for="updatedUsername">Updated Username:</label>
+            <input id="updatedUsername" [(ngModel)]="updatedUser.username" />
+
+            <label for="updatedEmail">Updated Email:</label>
+            <input id="updatedEmail" [(ngModel)]="updatedUser.email" />
+
+            <button (click)="updateUser()">Update</button>
+
+            <!-- Optionally, provide a button to cancel edit mode -->
+            <button (click)="cancelEditMode()">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

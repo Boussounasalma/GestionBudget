@@ -26,7 +26,7 @@ export const ROUTES: RouteInfo[] = [
     icon: 'nc-bullet-list-67',
     class: '',
   },
-  { path: '/user', title: 'Profil', icon: 'nc-single-02', class: '' },
+  { path: '/profil', title: 'Profil', icon: 'nc-single-02', class: '' },
 ];
 @Component({
   selector: 'app-sidebar',

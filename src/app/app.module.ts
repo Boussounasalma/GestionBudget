@@ -11,7 +11,6 @@ import { RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { httpInterceptorProviders } from '../helpers/auth.interceptor';
-import { ProfileComponent } from './components/profile/profile.component';
 import { BoardComponent } from './components/board/board.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -33,6 +32,7 @@ import { AddObjectifComponent } from './components/objectif/add-objectif/add-obj
 import { UpdateObjectifComponent } from './components/objectif/update-objectif/update-objectif.component';
 import { AddEpargneComponent } from './components/epargne/add-epargne/add-epargne.component';
 import { UpdateEpargneComponent } from './components/epargne/update-epargne/update-epargne.component';
+import { ProfilComponent } from './components/profil/profil.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +40,6 @@ import { UpdateEpargneComponent } from './components/epargne/update-epargne/upda
     RegistrationComponent,
     LoginComponent,
     HomeComponent,
-    ProfileComponent,
     BoardComponent,
     SidebarComponent,
     NavbarComponent,
@@ -61,6 +60,7 @@ import { UpdateEpargneComponent } from './components/epargne/update-epargne/upda
     UpdateObjectifComponent,
     AddEpargneComponent,
     UpdateEpargneComponent,
+    ProfilComponent,
   ],
   imports: [
     BrowserModule,

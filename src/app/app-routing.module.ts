@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { HomeComponent } from './components/home/home.component';
-import { ProfileComponent } from './components/profile/profile.component';
 import { BoardComponent } from './components/board/board.component';
 import { LoginComponent } from './components/login/login.component';
 import { AuthGuardService } from './services/auth-guard.service';
@@ -22,31 +21,96 @@ import { AddObjectifComponent } from './components/objectif/add-objectif/add-obj
 import { UpdateObjectifComponent } from './components/objectif/update-objectif/update-objectif.component';
 import { AddEpargneComponent } from './components/epargne/add-epargne/add-epargne.component';
 import { UpdateEpargneComponent } from './components/epargne/update-epargne/update-epargne.component';
+import { ProfilComponent } from './components/profil/profil.component';
 
 // app-routing.module.ts
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'registration', component: RegistrationComponent },
-  { path: 'compte', component: CompteComponent },
-  { path: 'add-compte', component: AddModalComponent },
-  { path: 'update-compte/:id', component: UpdateCompteComponent },
-  { path: 'revenue', component: RevenueComponent },
-  { path: 'add-revenue', component: AddRevenueComponent },
-  { path: 'update-revenue/:id', component: UpdateRevenueComponent },
-  { path: 'categorie', component: CategorieComponent },
-  { path: 'depense', component: DepenseComponent },
-  { path: 'add-depense', component: AddDepenseComponent },
-  { path: 'update-depense/:id', component: UpdateDepenseComponent },
-  { path: 'objectif', component: ObjectifComponent },
-  { path: 'add-objectif', component: AddObjectifComponent },
-  { path: 'update-objectif/:id', component: UpdateObjectifComponent },
-  { path: 'epargne', component: EpargneComponent },
-  { path: 'add-epargne', component: AddEpargneComponent },
-  { path: 'update-epargne/:id', component: UpdateEpargneComponent },
   {
-    path: 'profile',
-    component: ProfileComponent,
+    path: 'compte',
+    component: CompteComponent,
+    canActivate: [AuthGuardService],
+  },
+  {
+    path: 'add-compte',
+    component: AddModalComponent,
+    canActivate: [AuthGuardService],
+  },
+  {
+    path: 'update-compte/:id',
+    component: UpdateCompteComponent,
+    canActivate: [AuthGuardService],
+  },
+  {
+    path: 'revenue',
+    component: RevenueComponent,
+    canActivate: [AuthGuardService],
+  },
+  {
+    path: 'add-revenue',
+    component: AddRevenueComponent,
+    canActivate: [AuthGuardService],
+  },
+  {
+    path: 'update-revenue/:id',
+    component: UpdateRevenueComponent,
+    canActivate: [AuthGuardService],
+  },
+  {
+    path: 'categorie',
+    component: CategorieComponent,
+    canActivate: [AuthGuardService],
+  },
+  {
+    path: 'depense',
+    component: DepenseComponent,
+    canActivate: [AuthGuardService],
+  },
+  {
+    path: 'add-depense',
+    component: AddDepenseComponent,
+    canActivate: [AuthGuardService],
+  },
+  {
+    path: 'update-depense/:id',
+    component: UpdateDepenseComponent,
+    canActivate: [AuthGuardService],
+  },
+  {
+    path: 'objectif',
+    component: ObjectifComponent,
+    canActivate: [AuthGuardService],
+  },
+  {
+    path: 'add-objectif',
+    component: AddObjectifComponent,
+    canActivate: [AuthGuardService],
+  },
+  {
+    path: 'update-objectif/:id',
+    component: UpdateObjectifComponent,
+    canActivate: [AuthGuardService],
+  },
+  {
+    path: 'epargne',
+    component: EpargneComponent,
+    canActivate: [AuthGuardService],
+  },
+  {
+    path: 'add-epargne',
+    component: AddEpargneComponent,
+    canActivate: [AuthGuardService],
+  },
+  {
+    path: 'update-epargne/:id',
+    component: UpdateEpargneComponent,
+    canActivate: [AuthGuardService],
+  },
+  {
+    path: 'profil',
+    component: ProfilComponent,
     canActivate: [AuthGuardService],
   },
   { path: 'board', component: BoardComponent, canActivate: [AuthGuardService] },
