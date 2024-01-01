@@ -1,0 +1,101 @@
+<div class="wrapper">
+  <div class="sidebar" data-color="white" data-active-color="danger">
+    <app-sidebar></app-sidebar>
+  </div>
+  <div class="main-panel">
+    <app-navbar></app-navbar>
+    <div class="content">
+      <div class="container mt-4">
+        <div *ngIf="transactions.length > 0">
+          <h2 class="mb-4">Transaction History</h2>
+          <button class="btn btn-primary" (click)="openAddTransactionModal()">
+            Add Transaction
+          </button>
+
+          <!-- Filter Type Dropdown -->
+          <div class="mb-3">
+            <label for="filterType" class="form-label">Filter Type:</label>
+            <select
+              class="form-select"
+              id="filterType"
+              [(ngModel)]="filterType"
+            >
+              <option value="date">Date</option>
+              <option value="montant">Montant</option>
+            </select>
+          </div>
+
+          <!-- Date Filter -->
+          <div *ngIf="filterType === 'date'" class="mb-3">
+            <label for="dateFilter" class="form-label">Filter by Date:</label>
+            <div class="input-group">
+              <input
+                type="date"
+                class="form-control"
+                id="dateFilter"
+                [(ngModel)]="dateFilter"
+              />
+              <button
+                class="btn btn-primary"
+                (click)="applyFilterByDate(dateFilter)"
+              >
+                Apply Date Filter
+              </button>
+              <button class="btn btn-secondary" (click)="clearFilterByDate()">
+                Clear Date Filter
+              </button>
+            </div>
+          </div>
+
+          <!-- Montant Filter -->
+          <div *ngIf="filterType === 'montant'" class="mb-3">
+            <label for="montantFilter" class="form-label"
+              >Filter by Montant:</label
+            >
+            <div class="input-group">
+              <input
+                type="number"
+                class="form-control"
+                id="montantFilter"
+                [(ngModel)]="montantFilter"
+              />
+              <button
+                class="btn btn-primary"
+                (click)="applyFilterByMontant(montantFilter)"
+              >
+                Apply Filter
+              </button>
+              <button
+                class="btn btn-secondary"
+                (click)="clearFilterByMontant()"
+              >
+                Clear Filter
+              </button>
+            </div>
+          </div>
+
+          <!-- Transaction List -->
+          <ul class="list-group">
+            <li
+              *ngFor="let transaction of transactions"
+              class="list-group-item"
+            >
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <p class="mb-1">Type: {{ transaction.TYPE }}</p>
+                  <p class="mb-1">Date: {{ transaction.date | date }}</p>
+                  <p class="mb-1">Montant: {{ transaction.montant }}</p>
+                  <p class="mb-0">Compte: {{ transaction.compte.nom }}</p>
+                </div>
+                <!-- Add additional transaction details here if needed -->
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div *ngIf="transactions.length === 0" class="mt-4">
+          <p>No transactions found.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -33,6 +33,8 @@ import { UpdateObjectifComponent } from './components/objectif/update-objectif/u
 import { AddEpargneComponent } from './components/epargne/add-epargne/add-epargne.component';
 import { UpdateEpargneComponent } from './components/epargne/update-epargne/update-epargne.component';
 import { ProfilComponent } from './components/profil/profil.component';
+import { TransactionComponent } from './components/transaction/transaction.component';
+import { AddTransactionModalComponent } from './components/transaction/add-transaction-modal/add-transaction-modal.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +63,8 @@ import { ProfilComponent } from './components/profil/profil.component';
     AddEpargneComponent,
     UpdateEpargneComponent,
     ProfilComponent,
+    TransactionComponent,
+    AddTransactionModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -72,7 +76,6 @@ import { ProfilComponent } from './components/profil/profil.component';
     ReactiveFormsModule,
     BsDatepickerModule.forRoot(),
   ],
-
   providers: [],
   bootstrap: [AppComponent],
 })
