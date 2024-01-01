@@ -31,6 +31,8 @@ import { ObjectifComponent } from './components/objectif/objectif.component';
 import { EpargneComponent } from './components/epargne/epargne.component';
 import { AddObjectifComponent } from './components/objectif/add-objectif/add-objectif.component';
 import { UpdateObjectifComponent } from './components/objectif/update-objectif/update-objectif.component';
+import { AddEpargneComponent } from './components/epargne/add-epargne/add-epargne.component';
+import { UpdateEpargneComponent } from './components/epargne/update-epargne/update-epargne.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +59,8 @@ import { UpdateObjectifComponent } from './components/objectif/update-objectif/u
     EpargneComponent,
     AddObjectifComponent,
     UpdateObjectifComponent,
+    AddEpargneComponent,
+    UpdateEpargneComponent,
   ],
   imports: [
     BrowserModule,

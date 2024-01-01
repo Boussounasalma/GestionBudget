@@ -20,6 +20,8 @@ import { ObjectifComponent } from './components/objectif/objectif.component';
 import { EpargneComponent } from './components/epargne/epargne.component';
 import { AddObjectifComponent } from './components/objectif/add-objectif/add-objectif.component';
 import { UpdateObjectifComponent } from './components/objectif/update-objectif/update-objectif.component';
+import { AddEpargneComponent } from './components/epargne/add-epargne/add-epargne.component';
+import { UpdateEpargneComponent } from './components/epargne/update-epargne/update-epargne.component';
 
 // app-routing.module.ts
 const routes: Routes = [
@@ -40,7 +42,8 @@ const routes: Routes = [
   { path: 'add-objectif', component: AddObjectifComponent },
   { path: 'update-objectif/:id', component: UpdateObjectifComponent },
   { path: 'epargne', component: EpargneComponent },
-
+  { path: 'add-epargne', component: AddEpargneComponent },
+  { path: 'update-epargne/:id', component: UpdateEpargneComponent },
   {
     path: 'profile',
     component: ProfileComponent,

@@ -1,1 +1,48 @@
-<p>epargne works!</p>
+<div class="wrapper">
+  <div class="sidebar" data-color="white" data-active-color="danger">
+    <app-sidebar></app-sidebar>
+  </div>
+  <div class="main-panel">
+    <app-navbar></app-navbar>
+    <div class="content">
+      <div class="container mt-4">
+        <!-- Improved design for depense list -->
+        <div class="row">
+          <div class="col-md-12">
+            <h2>Epargnes for Current User</h2>
+            <button class="btn btn-success" (click)="navigateToAddEpargne()">
+              Ajouter une dépense
+            </button>
+            <ul class="list-group mt-3">
+              <li *ngFor="let epargne of epargnes" class="list-group-item">
+                <div class="d-flex justify-content-between">
+                  <div>
+                    <p>Date: {{ epargne.date }}</p>
+                    <p>Montant: {{ epargne.montant }}</p>
+                    <p>Objectif: {{ epargne.objectif.titre }}</p>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="btn btn-warning"
+                      (click)="onEdit(epargne.id)"
+                    >
+                      Edit
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-danger ml-2"
+                      (click)="onDelete(epargne.id)"
+                    >
+                      Delete
+                    </button>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
