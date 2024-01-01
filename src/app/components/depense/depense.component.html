@@ -1,0 +1,59 @@
+<div class="wrapper">
+  <div class="sidebar" data-color="white" data-active-color="danger">
+    <app-sidebar></app-sidebar>
+  </div>
+  <div class="main-panel">
+    <app-navbar></app-navbar>
+    <div class="content">
+      <div class="container mt-4">
+        <div class="col-md-12"></div>
+        <!-- depense-list.component.html -->
+        <div class="container mt-4">
+          <h2>Liste des dépenses</h2>
+          <button class="btn btn-success" (click)="goToAddDepense()">
+            Ajouter une dépense
+          </button>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Date</th>
+                <th>Montant</th>
+                <th>Compte</th>
+                <th>Libellé</th>
+                <th>Description</th>
+                <th>Catégorie</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let depense of depenses">
+                <td>{{ depense.id }}</td>
+                <td>{{ depense.date }}</td>
+                <td>{{ depense.montant }}</td>
+                <td>{{ depense.compte.nom }}</td>
+                <td>{{ depense.libelle }}</td>
+                <td>{{ depense.description }}</td>
+                <td>{{ depense.categorie.nom }}</td>
+                <td>
+                  <button
+                    class="btn btn-primary btn-sm"
+                    (click)="editDepense(depense)"
+                  >
+                    Modifier
+                  </button>
+                  <button
+                    class="btn btn-danger btn-sm"
+                    (click)="deleteDepense(depense.id)"
+                  >
+                    Supprimer
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,67 @@
+<div class="wrapper">
+  <div class="sidebar" data-color="white" data-active-color="danger">
+    <app-sidebar></app-sidebar>
+  </div>
+  <div class="main-panel">
+    <app-navbar></app-navbar>
+    <div class="content">
+      <div class="container mt-4">
+        <div class="col-md-12"></div>
+
+        <!-- Partie d'ajout toujours présente avec la liste -->
+        <div>
+          <h2 class="mb-4">
+            {{ isAddingOrEditing ? "Modifier" : "Ajouter" }} une catégorie
+          </h2>
+          <form
+            [formGroup]="newCategorieForm"
+            (ngSubmit)="isAddingOrEditing ? updateCategorie() : addCategorie()"
+          >
+            <div class="form-group">
+              <label for="nom">Nom de la catégorie:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="nom"
+                formControlName="nom"
+                required
+              />
+            </div>
+            <button type="submit" class="btn btn-primary mr-2">
+              {{ isAddingOrEditing ? "Modifier" : "Ajouter" }}
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              (click)="toggleAddingOrEditing()"
+            >
+              Annuler
+            </button>
+          </form>
+
+          <!-- Liste des catégories -->
+          <h2 class="mt-4">Toutes les catégories</h2>
+          <ul class="list-group">
+            <li
+              *ngFor="let categorie of categories"
+              class="list-group-item d-flex justify-content-between align-items-center"
+            >
+              {{ categorie.nom }}
+              <div>
+                <i
+                  class="fas fa-edit text-primary mr-2 cursor-pointer"
+                  (click)="editCategorie(categorie)"
+                >
+                </i>
+                <i
+                  class="fas fa-trash-alt text-danger cursor-pointer"
+                  (click)="deleteCategorie(categorie.id)"
+                ></i>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

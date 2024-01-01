@@ -22,6 +22,13 @@ import { UpdateCompteComponent } from './components/compte/update-compte/update-
 import { RevenueComponent } from './components/revenue/revenue.component';
 import { AddRevenueComponent } from './components/revenue/add-revenue/add-revenue.component';
 import { UpdateRevenueComponent } from './components/revenue/update-revenue/update-revenue.component';
+import { DepenseComponent } from './components/depense/depense.component';
+import { CategorieComponent } from './components/categorie/categorie.component';
+import { AddDepenseComponent } from './components/depense/add-depense/add-depense.component';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { UpdateDepenseComponent } from './components/depense/update-depense/update-depense.component';
+import { ObjectifComponent } from './components/objectif/objectif.component';
+import { EpargneComponent } from './components/epargne/epargne.component';
 
 @NgModule({
   declarations: [
@@ -40,15 +47,22 @@ import { UpdateRevenueComponent } from './components/revenue/update-revenue/upda
     RevenueComponent,
     AddRevenueComponent,
     UpdateRevenueComponent,
+    DepenseComponent,
+    CategorieComponent,
+    AddDepenseComponent,
+    UpdateDepenseComponent,
+    ObjectifComponent,
+    EpargneComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FormsModule,
     RouterModule,
     HttpClientModule,
+    FormsModule,
     ReactiveFormsModule,
+    BsDatepickerModule.forRoot(),
   ],
 
   providers: [],

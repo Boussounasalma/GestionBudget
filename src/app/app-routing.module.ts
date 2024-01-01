@@ -12,6 +12,12 @@ import { UpdateCompteComponent } from './components/compte/update-compte/update-
 import { RevenueComponent } from './components/revenue/revenue.component';
 import { AddRevenueComponent } from './components/revenue/add-revenue/add-revenue.component';
 import { UpdateRevenueComponent } from './components/revenue/update-revenue/update-revenue.component';
+import { DepenseComponent } from './components/depense/depense.component';
+import { CategorieComponent } from './components/categorie/categorie.component';
+import { AddDepenseComponent } from './components/depense/add-depense/add-depense.component';
+import { UpdateDepenseComponent } from './components/depense/update-depense/update-depense.component';
+import { ObjectifComponent } from './components/objectif/objectif.component';
+import { EpargneComponent } from './components/epargne/epargne.component';
 
 // app-routing.module.ts
 const routes: Routes = [
@@ -24,6 +30,12 @@ const routes: Routes = [
   { path: 'revenue', component: RevenueComponent },
   { path: 'add-revenue', component: AddRevenueComponent },
   { path: 'update-revenue/:id', component: UpdateRevenueComponent },
+  { path: 'categorie', component: CategorieComponent },
+  { path: 'depense', component: DepenseComponent },
+  { path: 'add-depense', component: AddDepenseComponent },
+  { path: 'update-depense/:id', component: UpdateDepenseComponent },
+  { path: 'objectif', component: ObjectifComponent },
+  { path: 'epargne', component: EpargneComponent },
   {
     path: 'profile',
     component: ProfileComponent,
