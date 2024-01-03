@@ -16,7 +16,7 @@ export class UpdateRevenueComponent {
   revenueId!: number;
   selectedRevenue: Revenue = {
     id: 0,
-    date: '',
+    date: new Date(),
     montant: 0,
     compte: { id: 0, nom: '', solde: 0, utilisateur: this.user },
     sourceRevenu: '',

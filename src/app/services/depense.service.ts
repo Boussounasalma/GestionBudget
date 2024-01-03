@@ -23,6 +23,16 @@ export class DepenseService {
     return this.http.get<Depense>(`${this.apiUrl}/depense/id/${id}`);
   }
 
+  getDepenseByUserId(id: number): Observable<Depense[]> {
+    return this.http.get<Depense[]>(`${this.apiUrl}/depense/user/id/${id}`);
+  }
+
+  getDepensesByCurrentMonthAndUser(userId: number): Observable<Depense[]> {
+    return this.http.get<Depense[]>(
+      `${this.apiUrl}/depense/user/current-month/${userId}`
+    );
+  }
+
   updateDepense(depense: Depense): Observable<void> {
     return this.http.put<void>(`${this.apiUrl}/depense`, depense);
   }

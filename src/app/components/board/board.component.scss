@@ -1,0 +1,28 @@
+.blinking-red {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+.bar-container {
+  display: flex;
+  align-items: flex-end;
+  margin: 0 5px;
+}
+
+/* Additional styles for the bar */
+canvas {
+  height: 100px; /* Adjust the height as needed */
+}
+
+div.blinking-red {
+  width: 100%;
+  text-align: center;
+  padding: 5px;
+  background-color: red;
+  color: white;
+}

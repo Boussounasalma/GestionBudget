@@ -9,6 +9,7 @@ export class Objectif {
   montantCible: number;
   dateLimite: Date;
   utilisateur: User;
+  pourcentage: number;
 
   constructor(
     id: number,
@@ -17,7 +18,8 @@ export class Objectif {
     montantActuel: number,
     montantCible: number,
     dateLimite: Date,
-    utilisateur: User
+    utilisateur: User,
+    pourcentage: number
   ) {
     this.id = id;
     this.titre = titre;
@@ -26,5 +28,6 @@ export class Objectif {
     this.dateLimite = dateLimite;
     this.utilisateur = utilisateur;
     this.description = description;
+    this.pourcentage = pourcentage;
   }
 }

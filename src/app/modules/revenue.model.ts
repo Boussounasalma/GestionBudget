@@ -3,7 +3,7 @@ import { Compte } from './compte.model';
 // revenue.model.ts
 export class Revenue {
   id: number;
-  date: string;
+  date: Date;
   montant: number;
   compte: Compte;
   sourceRevenu: string;
@@ -11,7 +11,7 @@ export class Revenue {
 
   constructor(
     id: number,
-    date: string,
+    date: Date,
     montant: number,
     compte: Compte,
     sourceRevenu: string,

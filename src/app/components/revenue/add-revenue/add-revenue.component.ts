@@ -14,7 +14,7 @@ export class AddRevenueComponent {
   comptes: Compte[] = [];
   selectedCompte: number = 0;
   selectedSourceRevenu: string = '';
-  selectedDate: string = '';
+  selectedDate: Date = new Date();
   selectedMontant: number = 0;
   selectedCategory: string = '';
   storedUser: User = new User(0, '', '', '');

@@ -17,6 +17,7 @@ export class AddObjectifComponent {
     description: '',
     montantActuel: 0,
     montantCible: 0,
+    pourcentage: 0,
     dateLimite: new Date(),
     utilisateur: { id: 0, username: '', email: '', password: '' },
   };

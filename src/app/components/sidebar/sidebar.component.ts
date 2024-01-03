@@ -27,6 +27,7 @@ export const ROUTES: RouteInfo[] = [
     class: '',
   },
   { path: '/profil', title: 'Profil', icon: 'nc-single-02', class: '' },
+  { path: '/budget', title: 'Budget', icon: 'nc-single-02', class: '' },
 ];
 @Component({
   selector: 'app-sidebar',

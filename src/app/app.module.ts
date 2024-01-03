@@ -35,6 +35,8 @@ import { UpdateEpargneComponent } from './components/epargne/update-epargne/upda
 import { ProfilComponent } from './components/profil/profil.component';
 import { TransactionComponent } from './components/transaction/transaction.component';
 import { AddTransactionModalComponent } from './components/transaction/add-transaction-modal/add-transaction-modal.component';
+import { NgChartsModule } from 'ng2-charts';
+import { BudgetComponent } from './components/budget/budget.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +67,7 @@ import { AddTransactionModalComponent } from './components/transaction/add-trans
     ProfilComponent,
     TransactionComponent,
     AddTransactionModalComponent,
+    BudgetComponent,
   ],
   imports: [
     BrowserModule,
@@ -75,6 +78,7 @@ import { AddTransactionModalComponent } from './components/transaction/add-trans
     FormsModule,
     ReactiveFormsModule,
     BsDatepickerModule.forRoot(),
+    NgChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

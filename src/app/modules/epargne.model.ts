@@ -4,14 +4,14 @@ import { Objectif } from './objectif.model';
 // revenue.model.ts
 export class Epargne {
   id: number;
-  date: string;
+  date: Date;
   montant: number;
   compte: Compte;
   objectif: Objectif;
 
   constructor(
     id: number,
-    date: string,
+    date: Date,
     montant: number,
     compte: Compte,
     objectif: Objectif

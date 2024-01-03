@@ -1,0 +1,33 @@
+<!-- budget-categorie.component.html -->
+
+<div>
+  <h2>Add Budget Categorie</h2>
+
+  <form (ngSubmit)="addBudgetCategorie()">
+    <label for="categorie">Category:</label>
+    <select
+      id="categorie"
+      name="categorieId"
+      [(ngModel)]="budgetCategorie.categorie.id"
+      required
+    >
+      <!-- Loop through categories fetched from your backend or provide them statically -->
+      <option *ngFor="let category of categories" [value]="category.id">
+        {{ category.nom }}
+      </option>
+    </select>
+
+    <label for="montantMensuel">Montant Mensuel:</label>
+    <input
+      type="number"
+      id="montantMensuel"
+      name="montantMensuel"
+      [(ngModel)]="budgetCategorie.montantMensuel"
+      required
+    />
+
+    <!-- Add other form fields as needed -->
+
+    <button type="submit">Add Budget Categorie</button>
+  </form>
+</div>

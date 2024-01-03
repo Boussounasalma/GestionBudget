@@ -4,7 +4,7 @@ import { Compte } from './compte.model';
 // revenue.model.ts
 export class Depense {
   id: number;
-  date: string;
+  date: Date;
   montant: number;
   compte: Compte;
   libelle: string;
@@ -13,7 +13,7 @@ export class Depense {
 
   constructor(
     id: number,
-    date: string,
+    date: Date,
     montant: number,
     compte: Compte,
     libelle: string,

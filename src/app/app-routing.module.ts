@@ -23,6 +23,7 @@ import { AddEpargneComponent } from './components/epargne/add-epargne/add-epargn
 import { UpdateEpargneComponent } from './components/epargne/update-epargne/update-epargne.component';
 import { ProfilComponent } from './components/profil/profil.component';
 import { TransactionComponent } from './components/transaction/transaction.component';
+import { BudgetComponent } from './components/budget/budget.component';
 
 // app-routing.module.ts
 const routes: Routes = [
@@ -117,6 +118,12 @@ const routes: Routes = [
   {
     path: 'transaction',
     component: TransactionComponent,
+    canActivate: [AuthGuardService],
+  },
+
+  {
+    path: 'budget',
+    component: BudgetComponent,
     canActivate: [AuthGuardService],
   },
   { path: 'board', component: BoardComponent, canActivate: [AuthGuardService] },

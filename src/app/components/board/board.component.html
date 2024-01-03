@@ -1,12 +1,138 @@
 <div class="wrapper">
+  <!-- Sidebar -->
   <div class="sidebar" data-color="white" data-active-color="danger">
     <app-sidebar></app-sidebar>
   </div>
+
+  <!-- Main Panel -->
   <div class="main-panel">
     <app-navbar></app-navbar>
     <div class="content">
-      <router-outlet></router-outlet>
+      <div class="container mt-4">
+        <!-- New row with four columns -->
+        <div class="row">
+          <!-- Column 1: Total User Accounts -->
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-header">
+                <i class="fas fa-users"></i> Total User Accounts
+              </div>
+              <div class="card-body">Total: {{ totalUserAccounts }}</div>
+            </div>
+          </div>
+
+          <!-- Column 2: Total Savings -->
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-header">
+                <i class="fas fa-piggy-bank"></i> Total Savings
+              </div>
+              <div class="card-body">Total: {{ totalSavings }}</div>
+            </div>
+          </div>
+        </div>
+        <!-- Revenue and Objective Charts -->
+        <div class="row mt-4">
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-header">
+                <i class="fas fa-chart-line"></i> Revenue by Month
+              </div>
+              <div class="card-body">
+                <canvas
+                  baseChart
+                  [datasets]="revenueChartData"
+                  [labels]="revenueChartLabels"
+                  [options]="revenueChartOptions"
+                ></canvas>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-header">
+                <i class="fas fa-bullseye"></i> Objective
+              </div>
+              <div class="card-body">
+                <canvas
+                  baseChart
+                  [datasets]="barChartData"
+                  [labels]="barChartLabels"
+                  [options]="barChartOptions"
+                ></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Expense and Savings Charts -->
+        <div class="row mt-4">
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-header">
+                <i class="fas fa-shopping-cart"></i> Expense
+              </div>
+              <div class="card-body">
+                <canvas
+                  baseChart
+                  [datasets]="depenseChartData"
+                  [labels]="depenseChartLabels"
+                  [options]="depenseChartOptions"
+                ></canvas>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-header">
+                <i class="fas fa-piggy-bank"></i> Savings
+              </div>
+              <div class="card-body">
+                <canvas
+                  baseChart
+                  [datasets]="epargneChartData"
+                  [labels]="epargneChartLabels"
+                  [options]="epargneChartOptions"
+                ></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-header">
+                <i class="fas fa-percent"></i> Budget Percentages
+              </div>
+              <div class="card-body">
+                <canvas
+                  baseChart
+                  [datasets]="percentageChartData"
+                  [labels]="percentageChartLabels"
+                  [options]="percentageChartOptions"
+                ></canvas>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-header">
+                <i class="fas fa-money-bill"></i> Budget by Category
+              </div>
+              <div class="card-body">
+                <ul>
+                  <li *ngFor="let category of budgetCategories">
+                    {{ category.categorie.nom }}:
+                    {{ category.montantMensuel }}
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- App Footer -->
+        <app-footer></app-footer>
+      </div>
     </div>
-    <app-footer></app-footer>
   </div>
 </div>
