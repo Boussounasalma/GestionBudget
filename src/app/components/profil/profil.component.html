@@ -9,11 +9,15 @@
         <div class="col-md-12">
           <!-- Show normal display if not in edit mode -->
           <div *ngIf="!isEditMode" class="user-info">
+            <div class="card sh">
+              <div class="card-body">
             <h2>{{ user.username }}</h2>
             <p>Email: {{ user.email }}</p>
             <button class="btn btn-primary" (click)="enterEditMode()">
               Edit
             </button>
+          </div>
+          </div>
           </div>
 
           <!-- Show edit mode if in edit mode -->

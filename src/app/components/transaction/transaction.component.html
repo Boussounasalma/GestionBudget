@@ -14,16 +14,13 @@
 
           <!-- Filter Type Dropdown -->
           <div class="mb-3">
-            <label for="filterType" class="form-label">Filter Type:</label>
-            <select
-              class="form-select"
-              id="filterType"
-              [(ngModel)]="filterType"
-            >
-              <option value="date">Date</option>
-              <option value="montant">Montant</option>
-            </select>
+          <label for="filterType" class="form-label">Filter Type:</label>
+          <select class="form-select form-select-lg mb-3" [(ngModel)]="filterType" aria-label="Default">
+            <option value="date">Date</option>
+            <option value="montant">Montant</option>
+          </select>
           </div>
+
 
           <!-- Date Filter -->
           <div *ngIf="filterType === 'date'" class="mb-3">
@@ -35,6 +32,7 @@
                 id="dateFilter"
                 [(ngModel)]="dateFilter"
               />
+            </div>
               <button
                 class="btn btn-primary"
                 (click)="applyFilterByDate(dateFilter)"
@@ -44,7 +42,7 @@
               <button class="btn btn-secondary" (click)="clearFilterByDate()">
                 Clear Date Filter
               </button>
-            </div>
+            
           </div>
 
           <!-- Montant Filter -->
@@ -59,6 +57,7 @@
                 id="montantFilter"
                 [(ngModel)]="montantFilter"
               />
+            </div>
               <button
                 class="btn btn-primary"
                 (click)="applyFilterByMontant(montantFilter)"
@@ -71,11 +70,11 @@
               >
                 Clear Filter
               </button>
-            </div>
+            
           </div>
 
           <!-- Transaction List -->
-          <ul class="list-group">
+          <ul class="list-group sh">
             <li
               *ngFor="let transaction of transactions"
               class="list-group-item"
