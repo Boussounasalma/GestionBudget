@@ -1,33 +1,46 @@
 <!-- budget-categorie.component.html -->
+<div class="wrapper">
+  <div class="sidebar" data-color="white" data-active-color="danger">
+    <app-sidebar></app-sidebar>
+  </div>
+  <div class="main-panel">
+    <app-navbar></app-navbar>
+    <div class="content">
+      <div class="container mt-4">
+        <div class="col-md-12"></div>
+        <!-- depense-list.component.html -->
+        <div class="container mt-4">
+          <h2>Add Budget Categorie</h2>
 
-<div>
-  <h2>Add Budget Categorie</h2>
+          <form (ngSubmit)="addBudgetCategorie()">
+            <label for="categorie">Category:</label>
+            <select
+              id="categorie"
+              name="categorieId"
+              [(ngModel)]="budgetCategorie.categorie.id"
+              required
+            >
+              <!-- Loop through categories fetched from your backend or provide them statically -->
+              <option *ngFor="let category of categories" [value]="category.id">
+                {{ category.nom }}
+              </option>
+            </select>
 
-  <form (ngSubmit)="addBudgetCategorie()">
-    <label for="categorie">Category:</label>
-    <select
-      id="categorie"
-      name="categorieId"
-      [(ngModel)]="budgetCategorie.categorie.id"
-      required
-    >
-      <!-- Loop through categories fetched from your backend or provide them statically -->
-      <option *ngFor="let category of categories" [value]="category.id">
-        {{ category.nom }}
-      </option>
-    </select>
+            <label for="montantMensuel">Montant Mensuel:</label>
+            <input
+              type="number"
+              id="montantMensuel"
+              name="montantMensuel"
+              [(ngModel)]="budgetCategorie.montantMensuel"
+              required
+            />
 
-    <label for="montantMensuel">Montant Mensuel:</label>
-    <input
-      type="number"
-      id="montantMensuel"
-      name="montantMensuel"
-      [(ngModel)]="budgetCategorie.montantMensuel"
-      required
-    />
+            <!-- Add other form fields as needed -->
 
-    <!-- Add other form fields as needed -->
-
-    <button type="submit">Add Budget Categorie</button>
-  </form>
+            <button type="submit">Add Budget Categorie</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
