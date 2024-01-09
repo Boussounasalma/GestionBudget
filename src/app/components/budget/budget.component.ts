@@ -15,7 +15,11 @@ import { Budget } from '../../modules/budget.model';
 export class BudgetComponent {
   budgetCategorie: BudgetCategorie = {
     id: 0,
-    categorie: { id: 0, nom: '' },
+    categorie: {
+      id: 0,
+      nom: '',
+      user: { id: 0, username: '', email: '', password: '' },
+    },
     budget: {
       id: 0,
       mois: 0,

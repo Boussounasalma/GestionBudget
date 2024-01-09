@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Categorie } from '../../modules/categorie_depense.model';
 import { CategorieService } from '../../services/categorie.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { User } from '../../modules/user.model';
 
 @Component({
   selector: 'app-categorie',
@@ -12,7 +13,8 @@ export class CategorieComponent {
   categories: Categorie[] = [];
   isAddingOrEditing = false;
   selectedCategoryId: number | null = null;
-  newCategorie: Categorie = new Categorie(0, '');
+  user: User = new User(0, '', '', '');
+  newCategorie: Categorie = new Categorie(0, '', this.user);
   newCategorieForm: FormGroup;
 
   constructor(
@@ -25,6 +27,7 @@ export class CategorieComponent {
   }
   ngOnInit(): void {
     this.loadCategories();
+    this.user = JSON.parse(sessionStorage.getItem('auth-user') || '{}');
   }
 
   loadCategories() {
@@ -37,6 +40,7 @@ export class CategorieComponent {
       }
     );
   }
+
   resetForm() {
     this.newCategorieForm.reset();
     this.selectedCategoryId = null;
@@ -47,17 +51,21 @@ export class CategorieComponent {
     this.resetForm();
   }
   addCategorie() {
-    this.categorieService
-      .createCategorie(this.newCategorieForm.value)
-      .subscribe(
-        () => {
-          this.loadCategories();
-          this.toggleAddingOrEditing();
-        },
-        (error) => {
-          console.log("Erreur lors de l'ajout de la catégorie", error);
-        }
-      );
+    const newCategorie: Categorie = {
+      id: 0,
+      nom: this.newCategorieForm.value.nom,
+      user: this.user,
+    };
+    console.log(newCategorie);
+    this.categorieService.createCategorie(newCategorie).subscribe(
+      () => {
+        this.loadCategories();
+        this.toggleAddingOrEditing();
+      },
+      (error) => {
+        console.log("Erreur lors de l'ajout de la catégorie", error);
+      }
+    );
   }
 
   editCategorie(categorie: Categorie) {
@@ -72,6 +80,7 @@ export class CategorieComponent {
     const updatedCategorie: Categorie = {
       id: this.selectedCategoryId || 0,
       nom: this.newCategorieForm.value.nom,
+      user: this.user,
     };
 
     this.categorieService.updateCategorie(updatedCategorie).subscribe(
